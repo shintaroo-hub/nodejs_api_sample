@@ -1,0 +1,50 @@
+[
+  {
+    "device_information": {
+      "serial_number": "01234567",
+      "equipment_type": "POPEYES"
+    },
+    "pin_codes": [
+      {
+        "id": 0,
+        "pin": 1234
+      },
+      {
+        "id": 1,
+        "pin": 4321
+      }
+    ]
+  },
+  {
+    "device_information": {
+      "serial_number": "01234568",
+      "equipment_type": "JFC"
+    },
+    "pin_codes": [
+      {
+        "id": 0,
+        "pin": 1234
+      },
+      {
+        "id": 1,
+        "pin": 4321
+      }
+    ]
+  },
+  {
+    "device_information": {
+      "serial_number": "01234569",
+      "equipment_type": "GOLDENARCHES"
+    },
+    "pin_codes": [
+      {
+        "id": 0,
+        "pin": 1234
+      },
+      {
+        "id": 1,
+        "pin": 4321
+      }
+    ]
+  }
+]

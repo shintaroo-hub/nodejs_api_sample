@@ -1,0 +1,29 @@
+[
+  {
+    "serial_number": "01234567",
+	"device_information": {
+		"serial_number": "01234567",
+		"model": "RFHU-24-02257467",
+		"warranty": "1999-01-01",
+		"equipment_type": "POPEYES"
+	}
+  },
+  {
+    "serial_number": "01234568",
+	  "device_information": {
+		"serial_number": "01234568",
+		"model": "MANGIN-01234568",
+		"warranty": "1999-01-01",
+		"equipment_type": "JFC"
+	  }
+  },
+  {
+    "serial_number": "01234569",
+	"device_information": {
+		"serial_number": "01234569",
+		"model": "MCD-01234569",
+		"warranty": "1999-01-01",
+		"equipment_type": "GOLDENARCHES"
+    }
+  }
+]

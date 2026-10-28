@@ -1,0 +1,47 @@
+[
+  {
+    "device_information": {
+      "serial_number": "01234567",
+      "equipment_type": "POPEYES"
+    },
+    "cloud_settings": {
+      "client_cert": "INSERTCLIENTERTHERE",
+      "client_privkey": "INSERTPRIVKEYHERE",
+      "client_pubkey": "INSERTPUBKEYHERE",
+      "cacert": "INSERTCACERTHERE",
+      "http_domain": "INSERTDOMAINHERE",
+      "http_port": "8443",
+      "session_id": "1234"
+    }
+  },
+  {
+    "device_information": {
+      "serial_number": "01234568",
+      "equipment_type": "JFC"
+    },
+    "cloud_settings": {
+      "client_cert": "INSERTCLIENTERTHERE",
+      "client_privkey": "INSERTPRIVKEYHERE",
+      "client_pubkey": "INSERTPUBKEYHERE",
+      "cacert": "INSERTCACERTHERE",
+      "http_domain": "INSERTDOMAINHERE",
+      "http_port": "8443",
+      "session_id": "1234"
+    }
+  },
+  {
+    "device_information": {
+      "serial_number": "01234569",
+      "equipment_type": "GOLDENARCHES"
+    },
+    "cloud_settings": {
+      "client_cert": "INSERTCLIENTERTHERE",
+      "client_privkey": "INSERTPRIVKEYHERE",
+      "client_pubkey": "INSERTPUBKEYHERE",
+      "cacert": "INSERTCACERTHERE",
+      "http_domain": "INSERTDOMAINHERE",
+      "mqtt_port": "12321",
+      "session_id": "1234"
+    }
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "device_information": {
+      "serial_number": "01234567",
+      "equipment_type": "POPEYES"
+    },
+    "device_config": {
+      "FW_REV": "1.2.3",
+      "LANGUAGE": "en",
+      "CONFIG": "2X2",
+      "TEMP_MODE": 0
+    }
+  },
+  {
+    "device_information": {
+      "serial_number": "01234568",
+      "equipment_type": "JFC"
+    },
+    "device_config": {
+      "FW_REV": "1.2.4",
+      "LANGUAGE": "en",
+      "CONFIG": "2X3",
+      "TEMP_MODE": 1
+    }
+  },
+  {
+    "device_information": {
+      "serial_number": "01234569",
+      "equipment_type": "GOLDENARCHES"
+    },
+    "device_config": {
+      "FW_REV": "1.2.5",
+      "LANGUAGE": "en",
+      "CONFIG": "2X4",
+      "TEMP_MODE": 0
+    }
+  }
+]

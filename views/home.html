@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <style>
+      body {
+	    overflow-x: hidden;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+		background: #1c1c1c;
+      }
+	  .grid-container 
+	  {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	  }
+	aside {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  z-index: 10;
+	  pointer-events: none;
+	}
+
+	aside .left-bottom {
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  transform: scaleX(-1);
+	}
+
+	aside .right-bottom {
+	  position: absolute;
+	  right: 0;
+	  bottom: 0;
+	}
+	aside .left-top {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  transform: scaleX(-1);
+	}
+
+	aside .right-top {
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	}	
+	aside img.left-bottom,
+	aside img.right-bottom,
+	aside img.left-top,
+	aside img.right-top {
+	  width: clamp(100px, 25vw, 300px);
+	  max-width: 30vw;
+	  height: auto;
+	}	
+	
+	aside .left-top,
+	aside .right-top {
+	  pointer-events: auto;
+	  cursor: pointer;
+	}	
+	.row-1 {
+	  display: grid;
+	  place-items: center;
+	}
+
+	.row-1 .pug,
+	.row-1 .fire {
+	  grid-area: 1 / 1;
+	}
+
+	.row-1 .fire {
+	  z-index: 1;
+	  width: 100vw;
+	  height: 50vh;
+	  background-image: url('/fire.gif');
+	  background-repeat: repeat-x;
+	  background-position: center bottom;
+	  background-size: auto 130%;
+	  position: absolute;
+	  bottom: 0;
+	}
+
+	.row-1 .pug {
+	  z-index: 2;
+	}
+	
+	.dvd-x,
+	.dvd-y {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  z-index: 5;
+	  pointer-events: none;
+	}
+
+	/* Left to right, then back */
+	.dvd-x {
+	  animation: bounce-x 13s linear infinite alternate;
+	}
+
+	/* Top to bottom, then back */
+	.dvd-y {
+	  animation: bounce-y 9s linear infinite alternate;
+	}
+
+	.dvd-eth {
+	  width: 100px;
+	  display: block;
+	  animation:
+		jitter 0.8s ease-in-out infinite,
+		spin 2s linear infinite;
+	}
+
+	@keyframes spin {
+	  from { rotate: 0deg; }
+	  to   { rotate: 360deg; }
+	}
+
+	@keyframes bounce-x {
+	  from { transform: translateX(0); }
+	  to   { transform: translateX(calc(100vw - 100px)); }
+	}
+
+	@keyframes bounce-y {
+	  from { transform: translateY(0); }
+	  to   { transform: translateY(calc(100vh - 93px)); }
+	}
+
+	@keyframes jitter {
+	  0%   { transform: translate(0, 0) rotate(0deg); }
+	  25%  { transform: translate(1px, -1px) rotate(-2deg); }
+	  50%  { transform: translate(-1px, 1px) rotate(2deg); }
+	  75%  { transform: translate(1px, 1px) rotate(-1deg); }
+	  100% { transform: translate(0, 0) rotate(0deg); }
+	}	
+	
+	.rave-overlay {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  z-index: 15;
+	  pointer-events: none;
+	  opacity: 0;
+	  transition: opacity 0.5s;
+	}
+
+	.rave-overlay.active {
+	  opacity: 1;
+	  animation: rave 2s ease-in-out infinite;
+	}
+
+	@keyframes rave {
+	  0%   { background: rgba(255, 0, 128, 0.18); }
+	  25%  { background: rgba(0, 200, 255, 0.18); }
+	  50%  { background: rgba(140, 0, 255, 0.18); }
+	  75%  { background: rgba(0, 255, 140, 0.18); }
+	  100% { background: rgba(255, 0, 128, 0.18); }
+	}
+
+	/* Lets the bouncing pug be clicked */
+	.dvd-eth {
+	  pointer-events: auto;
+	  cursor: pointer;
+	  transition: filter 0.3s;
+	}
+
+	/* Turns the effect off for people who set "reduce motion" on their device */
+	@media (prefers-reduced-motion: reduce) {
+	  .rave-overlay.active {
+		animation: none;
+	  }
+	}	
+	.welcome {
+	  height: 20vw;
+	  width: auto;
+	  animation: welcome-wiggle 0.6s ease-in-out infinite;
+	}
+
+	@keyframes welcome-wiggle {
+	  0%, 100% { rotate: -5deg; }
+	  50%      { rotate: 5deg; }
+	}	
+    </style>
+  </head>
+	<audio id="bgMusic" src="/doomhoya.mp3" loop></audio>
+  <body>
+  <div id="rave" class="rave-overlay"></div>
+    <img class="welcome" src="/welcome.png" alt="Welcome">
+	<div class="grid-container">
+		<section>
+			<main class="row row-1">
+			  <img class="pug" style="height: 30vh;" src="/pug-dance.gif" alt="Dancing pug">
+			  <div class="fire"></div>
+			</main>
+			<aside class="row row-2">
+				<img class="left-bottom" src="/edna_2.png" alt="aunt edna">
+				<img class="right-bottom" src="/skelegun.png" alt="gun">
+				<img class="left-top" src="/skullpet.gif" alt="pet1">
+				<img class="right-top" src="/skullpet.gif" alt="pet2">
+			</aside>
+		</section>
+	</div>
+	<div class="dvd-x">
+	  <div class="dvd-y">
+		<img class="dvd-eth" src="/uia.gif" alt="Bouncing pug">
+	  </div>
+	</div>
+  </body>
+  <script>
+  const music = document.getElementById('bgMusic');
+  const rave = document.getElementById('rave');
+  const eth = document.querySelector('.dvd-eth');
+  const bounceX = document.querySelector('.dvd-x');
+  const bounceY = document.querySelector('.dvd-y');
+  const skullpets = document.querySelectorAll('.left-top, .right-top');
+  
+	let currentSpeed = 1;
+
+	function speedUp() {
+	  // Random boost between 1.1x and 1.6x per hit, like flooring it between lanes
+	  const boost = Math.random() * 0.5 + 1.1;
+	  currentSpeed = currentSpeed * boost;
+
+	  // Not a speed limit: the browser throws an error if the number becomes Infinity
+	  if (!isFinite(currentSpeed) || currentSpeed > 1000000) {
+		currentSpeed = 1000000;
+	  }
+
+	  bounceX.getAnimations().forEach(function (animation) {
+		animation.updatePlaybackRate(currentSpeed);
+	  });
+
+	  bounceY.getAnimations().forEach(function (animation) {
+		animation.updatePlaybackRate(currentSpeed);
+	  });
+	}
+	
+	function resetSpeed() {
+	  currentSpeed = 1;
+
+	  bounceX.getAnimations().forEach(function (animation) {
+		animation.updatePlaybackRate(currentSpeed);
+	  });
+
+	  bounceY.getAnimations().forEach(function (animation) {
+		animation.updatePlaybackRate(currentSpeed);
+	  });
+	}
+
+  // Plays the music if paused, pauses it if playing
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  // Skullpets: play/pause music
+  skullpets.forEach(function (pet) {
+    pet.addEventListener('click', toggleMusic);
+  });
+
+  // Eth: play/pause music, and turn the rave on (it stays on)
+	eth.addEventListener('click', function () {
+	  toggleMusic();
+	  rave.classList.add('active');
+	  resetSpeed();
+	});
+
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+	let lastColorChange = 0;
+
+  function changeColors(event) {
+    // Only react to the bounce animations, not the jitter or spin
+    if (event.animationName !== 'bounce-x' && event.animationName !== 'bounce-y') {
+      return;
+    }
+
+	speedUp();
+	const now = Date.now();
+	if (now - lastColorChange < 500) {
+	  return; // Too soon, skip this color change
+	}
+	lastColorChange = now;
+
+    const hue = randomNumber(0, 360);
+    const contrast = randomNumber(150, 250);
+    const brightness = randomNumber(110, 140);
+    const saturate = randomNumber(800, 1500);
+
+    eth.style.filter =
+      `hue-rotate(${hue}deg) ` +
+      `saturate(${saturate}%) ` +
+      `contrast(${contrast}%) ` +
+      `brightness(${brightness}%) ` +
+      `drop-shadow(0 0 8px hsl(${hue}, 100%, 60%)) ` +
+      `drop-shadow(0 0 20px hsl(${hue}, 100%, 50%))`;
+  }
+
+  bounceX.addEventListener('animationiteration', changeColors);
+  bounceY.addEventListener('animationiteration', changeColors);
+</script>
+</html>
